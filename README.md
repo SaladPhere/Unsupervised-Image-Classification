@@ -147,7 +147,3 @@ The project uses Weights & Biases (wandb) for experiment tracking:
   - Configuration
 - Automatic resumption from latest checkpoint
 - Checkpoints stored in `checkpoints/` directory
-
-## License
-
-MIT License
