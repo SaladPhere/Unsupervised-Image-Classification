@@ -73,6 +73,12 @@ python src/clustering.py
 python src/inference.py
 ```
 
+5. Visualize training and clustering results:
+
+```bash
+python visualize_features.py
+```
+
 ## Implementation Details
 
 ### 1. Contrastive Learning (SimCLR)
@@ -147,7 +153,3 @@ The project uses Weights & Biases (wandb) for experiment tracking:
   - Configuration
 - Automatic resumption from latest checkpoint
 - Checkpoints stored in `checkpoints/` directory
-
-## License
-
-MIT License

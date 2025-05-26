@@ -67,7 +67,7 @@ def main():
         'temperature': 0.2,
         'learning_rate': 1.2e-3,
         'weight_decay': 1e-4,
-        'num_epochs': 24
+        'num_epochs': 200
     }
     
     # Set random seed for reproducibility

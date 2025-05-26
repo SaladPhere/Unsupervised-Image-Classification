@@ -5,6 +5,7 @@ stl10/
 checkpoints/
 features/
 wandb/
+visualizations/
 
 # Python
 __pycache__/

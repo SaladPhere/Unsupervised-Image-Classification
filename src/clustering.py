@@ -8,6 +8,7 @@ from sklearn.metrics.cluster import normalized_mutual_info_score, adjusted_rand_
 import wandb
 import torch
 from scipy.optimize import linear_sum_assignment
+from sklearn.preprocessing import StandardScaler, normalize
 from joblib import parallel_backend
 
 # Add the project root directory to Python path
@@ -62,6 +63,16 @@ def main():
     unlabeled_reduced = pca.fit_transform(unlabeled_features)
     train_reduced = pca.transform(train_features)
     test_reduced = pca.transform(test_features)
+
+    scaler = StandardScaler()
+    unlabeled_scaled = scaler.fit_transform(unlabeled_reduced)
+
+    train_scaled = scaler.transform(train_reduced)
+    test_scaled  = scaler.transform(test_reduced)
+
+    unlabeled_scaled = normalize(unlabeled_scaled)
+    train_scaled     = normalize(train_scaled)
+    test_scaled     = normalize(test_scaled)
     
     # Log explained variance
     explained_variance = np.sum(pca.explained_variance_ratio_)
@@ -73,7 +84,7 @@ def main():
         kmeans = KMeans(
             n_clusters=10,
             init="k-means++",
-            max_iter=300,
+            max_iter=500,
             n_init=10,
             random_state=42,
             verbose=1
