@@ -19,6 +19,7 @@ This project implements an unsupervised image classification pipeline using cont
 ├── checkpoints/             # Saved model checkpoints
 ├── features/               # Extracted features and centroids
 ├── wandb/                  # Local wandb logs (when offline)
+├── visualize_features.py   # Visualize training and clustering results
 └── requirements.txt        # Project dependencies
 ```
 
